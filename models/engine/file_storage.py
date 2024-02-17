@@ -81,3 +81,8 @@ class FileStorage:
             # Remove the object from __objects dictionary if it exists
             # using the generated key; if key doesn't exist, do nothing
             FileStorage.__objects.pop(key, None)
+
+    def close(self):
+        """Calls reload() method for deserializing the JSON file to objects.
+        """
+        self.reload()
